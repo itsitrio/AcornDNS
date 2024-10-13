@@ -1,0 +1,29 @@
+---
+'':
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.93
+
+'*':
+  octodns:
+    cloudflare:
+      proxied: true
+  type: A
+  value: 66.85.73.93
+
+# How deep can we go?
+moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog.moist.dog:
+  type: A
+  value: 66.85.73.93
+
+# Casidhe Bluesky (TODO: support through website)
+_atproto.casidhe:
+  type: TXT
+  value: did=did:plc:pqrtggdqkas36djvtqgxfkok
+
+# JennyBear Bluesky (TODO: support through website)
+_atproto.jennybear:
+  type: TXT
+  value: did=did:plc:qaucfhlm5qelswzubhm5ki2e

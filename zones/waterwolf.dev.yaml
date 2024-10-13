@@ -1,0 +1,112 @@
+---
+'':
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.83
+  - type: URLFWD
+    values:
+    - path: '/*'
+      target: https://github.com/WaterWolfDev
+      code: 302
+      masking: 2
+      query: 0
+
+# Cloudflare Email Routing
+
+  - type: MX
+    values:
+    - exchange: route1.mx.cloudflare.net.
+      preference: 1
+    - exchange: route2.mx.cloudflare.net.
+      preference: 91
+    - exchange: route3.mx.cloudflare.net.
+      preference: 8
+  - type: TXT
+    values:
+    # Cloudflare Email Routing
+    - v=spf1 include:_spf.mx.cloudflare.net ~all
+    # Google Cloud Identity Verification
+    - google-site-verification=zLTPzfqrze7RfZh4ER_VY3luDpsfN0RecYqtNOeHAwM
+
+# Github URL Forwards
+
+www:
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.83
+  - type: URLFWD
+    values:
+    - path: '/*'
+      target: https://github.com/WaterWolfDev
+      code: 302
+      masking: 2
+      query: 0
+
+git:
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.83
+  - type: URLFWD
+    values:
+    - path: '/*'
+      target: https://github.com/WaterWolfDev
+      code: 302
+      masking: 2
+      query: 0
+
+# VMWare Host
+wolfhub:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: A
+  value: 66.85.73.82
+
+# Old web server 
+web:
+  type: A
+  value: 66.85.73.83
+
+# Production web server
+raven:
+  type: A
+  value: 66.85.73.93
+
+# Development web server
+falcon:
+  type: A
+  value: 66.85.73.88
+
+# Relays
+relay1:
+  type: A
+  value: 66.85.73.84
+
+relay2:
+  type: A
+  value: 66.85.73.85
+
+relay3:
+  type: A
+  value: 66.85.73.86
+
+# Github Site Validation
+_github-challenge-WaterWolfDev-org:
+  type: TXT
+  value: a4672d3890
+
+# Movie server (WIP)
+# bigstream:
+#   type: A
+#   value: ??.??.??.??
+
+# Bino's server has the big gay
+binowulf:
+  type: A
+  value: 66.85.73.87

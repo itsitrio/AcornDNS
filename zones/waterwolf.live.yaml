@@ -1,0 +1,71 @@
+---
+'':
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.93
+  - type: URLFWD
+    values:
+      - path: /
+        target: https://waterwolf.club/live
+        code: 302
+        masking: 2
+        query: 0
+      - path: /*
+        target: https://waterwolf.club/$1
+        code: 302
+        masking: 2
+        query: 0
+
+www:
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.93
+  - type: URLFWD
+    value:
+      path: /*
+      target: https://waterwolf.live/$1
+      code: 302
+      masking: 2
+      query: 0
+
+# Stream relays
+stream:
+  type: A
+  value: 66.85.73.84
+stream2:
+  type: A
+  value: 66.85.73.85
+stream3:
+  type: A
+  value: 66.85.73.86
+
+# VRCDN redirects, see the vrcdn builk redirect list in Cloudflare
+vrcdn:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: A
+  value: 66.85.73.93
+
+# Roxy srt relay
+srt:
+  type: A
+  value: 144.202.70.208
+srt2:
+  type: A
+  value: 95.179.136.111
+us.srt:
+  type: CNAME
+  value: srt.waterwolf.live.
+eu.srt:
+  type: CNAME
+  value: srt2.waterwolf.live.
+
+# Waterwolf radio
+radio:
+  type: A
+  value: 195.201.166.244

@@ -1,0 +1,163 @@
+---
+'':
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.93
+  - type: MX
+    values:
+    - exchange: aspmx.l.google.com.
+      preference: 1
+    - exchange: alt1.aspmx.l.google.com.
+      preference: 5
+    - exchange: alt2.aspmx.l.google.com.
+      preference: 5
+    - exchange: alt3.aspmx.l.google.com.
+      preference: 10
+    - exchange: alt4.aspmx.l.google.com.
+      preference: 10
+  - type: TXT
+    value: v=spf1 include:_spf.google.com ~all
+  - type: URLFWD
+    values:
+      - path: /town.php
+        target: https://waterwolf.club/
+        code: 302
+        masking: 2
+        query: 0
+
+www:
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.93
+  - type: URLFWD
+    value:
+      path: /*
+      target: https://waterwolf.club/$1
+      code: 302
+      masking: 2
+      query: 0
+
+#Github URL Forward 
+
+git:
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.83
+  - type: URLFWD
+    values:
+    - path: '/*'
+      target: https://github.com/WaterWolfDev
+      code: 302
+      masking: 2
+      query: 0
+
+# Google email verification
+google._domainkey:
+  type: TXT
+  value: v=DKIM1\; k=rsa\; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjVfgVvsnpuddnBKa7z8BSlA3doEaGhP9q6Z1+3dZAuP3fjEH0BlVGsKeblKYzQ1H+1Xma77/bIiCwiaMZOO20Zgm79rBh2SNE5AaRmqgpBqyZSYxddeoWo39vQP9PE1tQN9Wt3E+Ip0JmPozrvKN17K1+1pwF4f9y28irkzL816FyALyAe3KhuZ8ma6XyesOypSavTe4eyIKfr7Jw5O2nsh02AHX7XmH0jYWpv4V9cK/Xw1GuBQhm4cjGK25ewBehlLsy4sMAiaBy32RhReiXejv5ZR7JG0RAfyNSjeCZieQd5dvKWuVXWOofuC8KuMbyTIOoMMCXquRKyZoIx6wNwIDAQAB
+
+# Domains for sending automated emails from
+mail:
+  - type: MX
+    values:
+    - exchange: inbound-smtp.us-west-2.amazonaws.com.
+      preference: 10
+  - type: TXT
+    value: "v=spf1 include:amazonses.com ~all"
+
+_dmarc.mail:
+  type: TXT
+  value: 'v=DMARC1\;p=quarantine\;pct=100\;rua=mailto:abuse@mail.waterwolf.club'
+
+sec.mail:
+  - type: MX
+    values:
+    - exchange: feedback-smtp.us-west-2.amazonses.com.
+      preference: 10
+  - type: TXT
+    value: "v=spf1 include:amazonses.com ~all"
+
+_dmarc.sec.mail:
+  type: TXT
+  value: 'v=DMARC1\;p=quarantine\;pct=100\;rua=mailto:abuse@mail.waterwolf.club'
+
+_github-challenge-WaterWolfDev-org:
+  type: TXT
+  value: da0474eae2
+
+# Production media
+media:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: A
+  value: 66.85.73.93
+
+# CDN testing
+wwcdn:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: A
+  value: 66.85.73.93
+
+# Development
+dev:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: A
+  value: 66.85.73.88
+
+mediadev:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: A
+  value: 66.85.73.93
+
+# Stream redirect for the VR dancers world
+dancers:
+  type: A
+  value: 192.168.40.10
+
+# Selfhosted Git LFS using Hubless
+lfs:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: A
+  value: 66.85.73.93
+
+# Selfhosted Wiki
+wiki:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: A
+  value: 66.85.73.93
+
+
+# Status website
+# Do not enable proxying, we want this to be up even if Cloudflare has issues
+status:
+  type: CNAME
+  value: d71522cicrxef.cloudfront.net.
+
+_atproto:
+  type: TXT
+  value: did=did:plc:6m5axx5b3uqsrqi66a32736f
+
+# Flashbang Voting Backend
+vote:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: A
+  value: 66.85.73.89

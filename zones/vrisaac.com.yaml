@@ -1,0 +1,28 @@
+---
+'':
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.93
+  - type: URLFWD
+    value:
+      path: /*
+      target: https://engineerisaac.moist.dog/$1
+      code: 302
+      masking: 2
+      query: 0
+
+www:
+  - octodns:
+      cloudflare:
+        proxied: true
+    type: A
+    value: 66.85.73.93
+  - type: URLFWD
+    value:
+      path: /*
+      target: https://vrisaac.com/$1
+      code: 302
+      masking: 2
+      query: 0

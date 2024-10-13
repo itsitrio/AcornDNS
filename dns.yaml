@@ -1,0 +1,157 @@
+---
+providers:
+  config:
+    class: octodns.provider.yaml.YamlProvider
+    directory: zones
+    default_ttl: 300
+    enforce_order: False
+  cloudflare:
+    class: octodns_cloudflare.CloudflareProvider
+    account_id: 128d6f72ab156196a9f545b7e7f481e9
+    token: env/CLOUDFLARE_API_TOKEN
+
+processors:
+  ignore-letsencrypt:
+    class: octodns.processor.filter.NameRejectlistFilter
+    rejectlist:
+      - /_acme-challenge/
+  ignore-cfa:
+    class: octodns.processor.filter.ValueRejectlistFilter
+    rejectlist:
+      - /\.cfargotunnel\.com\.$/
+  ignore-acm-validation:
+    class: octodns.processor.filter.ValueRejectlistFilter
+    rejectlist:
+      - /\.acm-validations\.aws\.$/
+  ignore-ses-dkim:
+    class: octodns.processor.filter.NameRejectlistFilter
+    rejectlist:
+      - /_domainkey.mail/
+  # TODO: All manually configured right now, find some way to automate
+  ignore-terraform:
+    class: octodns.processor.filter.NameRejectlistFilter
+    rejectlist:
+      - /atlantis/
+      - /moistcity/
+  ignore-r2:
+    class: octodns.processor.filter.ValueRejectlistFilter
+    rejectlist:
+      - public.r2.dev.
+
+
+zones:
+  waterwolf.club.:
+    sources:
+    - config
+    processors:
+    - ignore-letsencrypt
+    - ignore-cfa
+    - ignore-acm-validation
+    - ignore-ses-dkim
+    - ignore-terraform
+    - ignore-r2
+    targets:
+    - cloudflare
+  
+  waterwolf.dev.:
+    sources:
+    - config
+    processors:
+    - ignore-letsencrypt
+    - ignore-cfa
+    - ignore-acm-validation
+    - ignore-ses-dkim
+    - ignore-terraform
+    - ignore-r2
+    targets:
+    - cloudflare
+
+  area55.space.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  foxxcon.club.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  purriku.com.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  vrcsocial.com.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  vrisaac.com.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  waterwolf.games.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  waterwolf.live.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  waterwolf.place.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  waterwolf.rsvp.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  waterwolf.town.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  waterwolf.video.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  waterwolf.zip.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  moist.dog.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  moistdog.tv.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+
+  wtr.wf.:
+    sources:
+    - config
+    targets:
+    - cloudflare
