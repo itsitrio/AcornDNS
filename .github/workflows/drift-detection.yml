@@ -1,0 +1,35 @@
+name: Drift Detection
+
+on:
+  schedule:
+    - cron: '42 * * * *'
+  workflow_dispatch:
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.cloudflare_api_token }}
+
+jobs:
+  drift_detection:
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: read
+      issues: write 
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v22
+      - name: Install dependencies
+        run: nix develop --command true
+      - name: Dry Run
+        id: dry_run
+        run: |
+          echo "log<<LOG_DELIMITER" >> $GITHUB_OUTPUT
+          nix develop --command octodns-sync --config-file=dns.yaml --quiet &>> $GITHUB_OUTPUT
+          echo "LOG_DELIMITER" >> $GITHUB_OUTPUT
+      - uses: JasonEtco/create-an-issue@v2.9
+        if: ${{ !contains(steps.dry_run.outputs.log, 'No changes were planned') }}
+        with:
+          filename: .github/drift-template.md
+          update_existing: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ steps.dry_run.outputs.log }}

@@ -1,0 +1,32 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.cloudflare_api_token }}
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: read
+      pull-requests: write 
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v22
+      - name: Install dependencies
+        run: nix develop --command true
+      - name: Dry Run
+        id: dry_run
+        run: |
+          echo -e "\`\`\`bash\n" >> output.log;
+          nix develop --command octodns-sync --config-file=dns.yaml --quiet 2>&1 | sed $'s/\033\[[0-9;]*m//g' >> output.log;
+          echo -e "\n\`\`\`\n" >> output.log;
+      - name: Comment
+        uses: thollander/actions-comment-pull-request@2f6921097b4dc86a5b9fca468fabe581271e7a06
+        with:
+          filePath: output.log
+          comment_tag: dry_run

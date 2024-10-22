@@ -19,13 +19,6 @@
       preference: 10
   - type: TXT
     value: v=spf1 include:_spf.google.com ~all
-  - type: URLFWD
-    values:
-      - path: /town.php
-        target: https://waterwolf.club/
-        code: 302
-        masking: 2
-        query: 0
 
 www:
   - octodns:
@@ -33,13 +26,6 @@ www:
         proxied: true
     type: A
     value: 66.85.73.93
-  - type: URLFWD
-    value:
-      path: /*
-      target: https://waterwolf.club/$1
-      code: 302
-      masking: 2
-      query: 0
 
 #Github URL Forward 
 
@@ -49,13 +35,6 @@ git:
         proxied: true
     type: A
     value: 66.85.73.83
-  - type: URLFWD
-    values:
-    - path: '/*'
-      target: https://github.com/WaterWolfDev
-      code: 302
-      masking: 2
-      query: 0
 
 # Google email verification
 google._domainkey:

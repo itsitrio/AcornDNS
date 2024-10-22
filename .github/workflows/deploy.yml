@@ -1,0 +1,26 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'dns.yaml'
+      - 'zones/*.yaml'
+      - '.github/workflows/deploy.yml'
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.cloudflare_api_token }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v22
+      - name: Install dependencies
+        run: nix develop --command true
+      - name: Deploy Changes
+        run: nix develop --command octodns-sync --config-file=dns.yaml --doit
