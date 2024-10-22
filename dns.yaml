@@ -12,7 +12,197 @@ providers:
 
 
 zones:
+  acornmedia.group.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  anthro.codes.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  anthro.directory.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  anthro.host.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  anthro.productions.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  anthro.systems.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  bagsforflights.com.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  breadplane.com.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  faggots.systems.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  fgt.lgbt.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  fluffy.tools.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  fuckednow.io.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  furry.technology.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  fuzzy.tools.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  hillsborotech.com.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  itrio.dev.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  itrio.mov.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  itrio.space.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  itrio.xyz.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  itrio.zip.:
+    sources:
+    - config
+    targets:
+    - cloudflare
   itrio.pet.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  its-stuck-inside.me.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  itsstuckinside.wtf.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  medicat.dev.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  ohcumin.me.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  proto.pet.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  sqrl.lgbt.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  sqrl.pet.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  sqrl.tv.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  stopmariahcarey.org.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  sunstone.mov.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  sunstone.zip.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  taber.dog.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  timer.pet.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  techtonic.cc.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  techtonicpod.cc.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  techtonicpod.com.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  toastquickie.com.:
+    sources:
+    - config
+    targets:
+    - cloudflare
+  waterwolf.media.:
     sources:
     - config
     targets:
