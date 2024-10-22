@@ -1,4 +1,4 @@
-# Waterwolf DNS
+# Itrio's DNS
 
 ```
 It’s not DNS
@@ -6,7 +6,7 @@ There’s no way it’s DNS
 It was DNS
 ```
 
-Zones for Waterwolf's infrastructure
+Zones for Itrio's infrastructure
 
 ## Making Changes
 
