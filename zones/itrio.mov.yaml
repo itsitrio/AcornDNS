@@ -1,0 +1,15 @@
+---
+? ''
+: octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: ALIAS
+  value: badpark.pages.dev.
+_domainconnect:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: CNAME
+  value: connect.domains.google.com.

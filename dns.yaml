@@ -8,7 +8,7 @@ providers:
   cloudflare:
     class: octodns_cloudflare.CloudflareProvider
     account_id: 0a5000ba760d618c620570488a84564a
-    token: MzZPUbwfg1c7OaUKLsxtSsRUCYkkG9o1p4IUXrVV
+    token: env/CLOUDFLARE_API_TOKEN
 
 
 zones:

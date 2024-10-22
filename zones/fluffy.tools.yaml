@@ -1,0 +1,22 @@
+---
+? ''
+: octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: ALIAS
+  value: fluffytools.pages.dev.
+url:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: AAAA
+  value: '100::'
+whitelist:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: AAAA
+  value: '100::'

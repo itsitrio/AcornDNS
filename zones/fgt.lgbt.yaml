@@ -1,0 +1,8 @@
+---
+? ''
+: octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: ALIAS
+  value: parkdom.pages.dev.

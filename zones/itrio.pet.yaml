@@ -1,0 +1,30 @@
+---
+? ''
+: octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: ALIAS
+  value: itriolinks.pages.dev.
+_atproto:
+  ttl: 300
+  type: TXT
+  value: did=did:plc:25lspwsly5jteojasnf3vezt
+_discord:
+  ttl: 300
+  type: TXT
+  value: dh=b3a572e5d3c74ac6a7acd6bd44e65db7784f2f84
+img:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: public.r2.dev.
+link:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: itriolinks.pages.dev.

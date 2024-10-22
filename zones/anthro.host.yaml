@@ -1,0 +1,47 @@
+---
+creative:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: A
+  value: 137.220.43.114
+hello:
+  ttl: 300
+  type: TXT
+  value: hello world!
+mc:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: A
+  value: 137.220.43.114
+panel:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: A
+  value: 98.246.240.3
+playmc:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: A
+  value: 137.220.43.114
+rootscastic:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: A
+  value: 137.220.43.114
+wing:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: A
+  value: 98.246.240.3

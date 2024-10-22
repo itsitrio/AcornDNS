@@ -1,0 +1,39 @@
+---
+? ''
+: - octodns:
+      cloudflare:
+        proxied: true
+    ttl: 300
+    type: ALIAS
+    value: itriolinks.pages.dev.
+  - ttl: 300
+    type: TXT
+    value: v=spf1 -all
+cdn-apac:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: public.r2.dev.
+medicat:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: medicatmirror.pages.dev.
+mirrors:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: public.r2.dev.
+www:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: itrio.xyz.

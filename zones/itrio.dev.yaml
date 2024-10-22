@@ -1,0 +1,41 @@
+---
+? ''
+: - octodns:
+      cloudflare:
+        proxied: true
+    ttl: 300
+    type: ALIAS
+    value: itriodev.pages.dev.
+  - ttl: 300
+    type: MX
+    values:
+    - exchange: in1-smtp.messagingengine.com.
+      preference: 0
+    - exchange: in2-smtp.messagingengine.com.
+      preference: 0
+  - ttl: 300
+    type: TXT
+    values:
+    - keybase-site-verification=k0XkGhCvDWqUzuBkkOdu83BserfHA_HrU5dxFy-QM5E
+    - v=spf1 include:spf.messagingengine.com ?all
+fm1._domainkey:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: CNAME
+  value: fm1.itrio.dev.dkim.fmhosted.com.
+fm2._domainkey:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: CNAME
+  value: fm2.itrio.dev.dkim.fmhosted.com.
+fm3._domainkey:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: CNAME
+  value: fm3.itrio.dev.dkim.fmhosted.com.

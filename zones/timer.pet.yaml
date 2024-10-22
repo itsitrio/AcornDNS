@@ -1,0 +1,15 @@
+---
+? ''
+: octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: ALIAS
+  value: timer-cy0.pages.dev.
+getmy:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: AAAA
+  value: '100::'

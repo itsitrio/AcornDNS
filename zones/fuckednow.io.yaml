@@ -1,0 +1,8 @@
+---
+get:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: A
+  value: 8.8.8.8

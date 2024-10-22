@@ -1,0 +1,27 @@
+---
+? ''
+: ttl: 300
+  type: TXT
+  value: v=spf1 -all
+'*._domainkey':
+  ttl: 300
+  type: TXT
+  value: v=DKIM1\; p=
+_dmarc:
+  ttl: 300
+  type: TXT
+  value: v=DMARC1\; p=reject\; sp=reject\; adkim=s\; aspf=s\;
+img:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: public.r2.dev.
+link:
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 300
+  type: CNAME
+  value: itriolinks.pages.dev.
