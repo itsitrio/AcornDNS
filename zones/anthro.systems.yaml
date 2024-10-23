@@ -1,1 +1,8 @@
---- {}
+---
+? ''
+speed: octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: A
+  value: 66.135.0.65
