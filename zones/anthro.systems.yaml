@@ -1,6 +1,5 @@
----
-? ''
-speed: octodns:
+speed:
+  octodns:
     cloudflare:
       proxied: false
   ttl: 300
