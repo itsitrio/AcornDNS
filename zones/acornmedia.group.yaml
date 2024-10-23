@@ -1,1 +1,14 @@
---- {}
+fin:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: A
+  value: 45.32.229.37
+inv:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: A
+  value: 45.32.229.37
