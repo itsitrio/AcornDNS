@@ -5,3 +5,10 @@ speed:
   ttl: 300
   type: A
   value: 66.135.0.65
+speed2:
+  octodns:
+    cloudflare:
+      proxied: false
+  ttl: 300
+  type: A
+  value: 149.28.118.42
