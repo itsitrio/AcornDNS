@@ -5,7 +5,7 @@
         proxied: true
     ttl: 300
     type: ALIAS
-    value: itriolinks.pages.dev.
+    value: itriopet.pages.dev.
   - ttl: 300
     type: TXT
     value: v=spf1 -all

@@ -5,7 +5,7 @@
       proxied: true
   ttl: 300
   type: ALIAS
-  value: itriolinks.pages.dev.
+  value: itriopet.pages.dev.
 _atproto:
   ttl: 300
   type: TXT
@@ -27,4 +27,4 @@ link:
       proxied: true
   ttl: 300
   type: CNAME
-  value: itriolinks.pages.dev.
+  value: itriopet.pages.dev.
